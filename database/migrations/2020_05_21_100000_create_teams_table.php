@@ -17,6 +17,11 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->index();
             $table->string('name');
+            $table->string('slug');
+            $table->string('address');
+            $table->string('phone');
+            $table->unsignedBigInteger('owner_id');
+            $table->text('meta');
             $table->boolean('personal_team');
             $table->timestamps();
         });
